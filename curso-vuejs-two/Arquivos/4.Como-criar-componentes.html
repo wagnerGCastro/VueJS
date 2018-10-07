@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+
+<div id="root">
+
+    <tarefa>Ir para o banco</tarefa>
+    <tarefa>Ir para a academia</tarefa>
+    <tarefa>Ir para o trabalho</tarefa>
+
+    <hr/>
+
+    <lista-tarefas></lista-tarefas>
+
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+	
+	Vue.component('lista-tarefas', {
+		template: '<div><tarefa v-for="tarefa in tarefas"> {{tarefa.descricao}} </tarefa></div>',
+		data() {
+			return {
+			  tarefas: [
+			    { descricao: ' ao Banco no Brasil' },
+			    { descricao: ' gravar as aulas' },
+			    { descricao: ' para a aula de inglês' }
+			  ]
+			}
+		}
+	});
+
+
+	Vue.component('tarefa', {
+		template: '<li> Ir   <b><slot></slot></b> </li>',
+	});
+
+	new Vue({
+		el: '#root'
+	});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "curso-vuejs-two",
+  "description": "curso de vuejs",
+  "main": "index.js",
+  "authors": [
+    "wagner gomes"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
