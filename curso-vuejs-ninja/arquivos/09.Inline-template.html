@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+    <link rel="stylesheet" href="./../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../bower_components/bulma/css/bulma.css">
+</head>
+
+<body>
+<!--
+http://bulma.io/
+https://cdnjs.com/libraries/bulma
+-->
+
+<div id="root" class="container">
+    <progresso inline-template>
+        <div>
+            <h1> Concluído {{ porcentagemProgresso }} %</h1>
+            <button @click="porcentagemProgresso += 10" > Mais 10</button>
+        </div>
+    </progresso>
+
+</div>
+
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<!--<script src="https://unpkg.com/vue@2.2.6"></script>-->
+<script src="./../bower_components/vue/dist/vue.min.js"></script>
+
+<script >
+    
+    Vue.component('progresso', {
+
+          data() {
+            return {porcentagemProgresso: 10};
+          }
+
+        });
+
+
+        new Vue({
+          el: '#root'
+    });
+</script>
+
+</body>
+</html>

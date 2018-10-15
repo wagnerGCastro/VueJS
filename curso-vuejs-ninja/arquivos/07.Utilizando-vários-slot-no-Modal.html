@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+    </style>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="./../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../bower_components/bulma/css/bulma.css">
+</head>
+
+<body>
+<!--
+http://bulma.io/
+https://cdnjs.com/libraries/bulma
+-->
+
+<div id="root" class="container">
+    <button @click="showModal = true"> Mostrar Modal</button>
+
+
+    <modal v-show="showModal" @meuclickfechar="showModal = false">
+
+        <template slot="header">Título definido pelo slot </template>
+        Algo bem aqui :) texto maior
+
+        <template slot="footer">
+            <a class="button is-success">Salvar alterações</a>
+        </template>
+
+    </modal>
+
+</div>
+
+
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<!--<script src="https://unpkg.com/vue@2.2.6"></script>-->
+<script src="./../bower_components/vue/dist/vue.min.js"></script>
+
+
+<script >
+    Vue.component('modal', {
+          template: `
+                <div class="modal is-active">
+                  <div class="modal-background"></div>
+                  <div class="modal-card">
+                  
+                  
+                    <header class="modal-card-head">
+                      <p class="modal-card-title">
+                        <slot name="header"></slot>
+                       </p>
+                      
+                      <button class="delete" @click="$emit('meuclickfechar')"></button>
+                      
+                    </header>
+                    
+                    
+                    <section class="modal-card-body">
+                      <slot>Se eu escreve algo na tag slot padrão</slot>
+                    </section>
+                    
+                    <footer class="modal-card-foot">
+                      
+                      <slot name="footer"> <b>Footer</b> </slot>
+
+                    </footer>
+                  </div>
+                </div>
+            `
+
+        });
+
+
+        new Vue({
+          el: '#root',
+          data: {
+            showModal: false
+          }
+        });
+
+</script>
+
+</body>
+</html>

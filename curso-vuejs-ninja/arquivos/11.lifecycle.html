@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head >
+    
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+    
+    <link rel="stylesheet" href="./../assets/framework/bootstrap-3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="./../text/css" href="assets/framework/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
+
+    <link rel="stylesheet" href="./../assets/css/@font-face.css" />
+    <link rel="stylesheet" href="./../assets/css/@responsive.css" />
+    <link rel="stylesheet" href="./../assets/css/index.css" />
+
+    <style>
+        .resp {
+            background-color: #dff;    
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="corpo_site">
+        <div class="row">
+            <div class=" col-xs-12 col-md-12"  id="tela_">
+                <h2 class="demoHeaders">VueJS</h2>
+                    <div id="app-9">
+                        <form  @submit="checkForm"  action="http://google.com" method="post">
+                            <!-- Erros de Validação -->
+                            <p  v-if="errors.length">
+                                <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
+                                <ul>
+                                    <li v-for="error in errors">{{ error }}</li>
+                                </ul>
+                            </p>
+
+
+                            <!-- Text -->
+                            <input class="cl-inputs" v-model="message" placeholder="edit me">
+                            <p>Message is: {{ message | truncate('10') }}</p>
+                            <p>Message is: {{ toUpperCase }}</p>
+                            </br></br>
+
+                            <!-- Multiline text -->
+                            <span>Multiline message is:</span>
+                            <p style="white-space: pre-line;">{{ message }}</p>
+                            <br>
+                            <textarea class="cl-inputs" v-model="message" cols="50" placeholder="add multiple lines"></textarea>
+                            </br></br>
+
+                            <div id='example-3'>
+                                <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+                                <label for="jack">Jack</label>
+                                <input type="checkbox" id="john" value="John" v-model="checkedNames">
+                                <label for="john">John</label>
+                                <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+                                <label for="mike">Mike</label>
+                                <br>
+                                <span>Checked names: {{ checkedNames }}</span>
+                                <br>
+                                <input type="button" @click="getNames()" value="clique aqui" >
+                            </div>
+                            </br></br>
+
+
+                            <!-- #Radio -->
+                            <input type="radio" id="one" value="One" v-model="picked">
+                            <label for="one">One</label>
+                            <br>
+                            <input type="radio" id="two" value="Two" v-model="picked">
+                            <label for="two">Two</label>
+                            <br>
+                            <span>Picked: {{ picked }}</span>
+                            </br></br>
+
+
+                            <!-- Multiple select (bound to Array): -->
+                            <div class="form-group">
+                                <label for="sel1">Select list:</label>
+                                </br>
+                                <select style="border:1px solid #ccc; padding:5px;" v-model="selectMultiple" multiple>
+                                    <option>ABACAXI</option>
+                                    <option>BANANA</option>
+                                    <option>CAJAMANGA</option>
+                                    <option>DANONE</option>
+                                    <option>ERVILHA</option>
+                                    <option>FAINHA</option>
+                                </select>
+                                
+                            </div>
+                            <span>Selected: {{ selectMultiple  }}</span>
+                            </br></br>
+
+
+                            <!-- Dynamic options rendered with v-for: -->
+                            <select v-model="selected">
+                                <option v-for="option in options" v-bind:value="option.value">
+                                    {{ option.text }}
+                                </option>
+                            </select>
+                            <span>Selected: {{ selected }}</span>
+
+                            </br></br>
+                                <button v-on:click.prevent.stop="enviar()" type="submit"> Enviar</button>
+                                <!-- <button  type="submit"> Enviar</button> -->
+                            </br></br>
+                        </form>
+
+                        <div id="resp" class="resp" > 
+                            <ul id="ul-resp"> </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div > <!-- col-md-6 -->
+
+       
+
+    </div> <!-- corpo do site -->
+</body>
+ <!-- Javascript -->
+    <script type="text/javascript" src="./../assets/js/jquery-3.0.0.min.js"> </script>
+    <script type="text/javascript" src="./../assets/framework/bootstrap-3.3.7/js/bootstrap.min.js">  </script> 
+    <script type="text/javascript" src="./../assets/framework/jquery-ui-1.12.1.custom/jquery-ui.min.js">  </script> 
+    <!-- production version, optimized for size and speed -->
+    <script type="text/javascript" src="./../assets/plugin/vue.js"></script>
+    <script type="text/javascript">
+        
+
+        // https://br.vuejs.org/v2/guide/index.html
+        // https://br.vuejs.org/v2/guide/events.html#Modificadores-de-Evento
+        
+        /* 9- inputs  */
+        var app = new Vue({
+
+            el: '#app-9',
+
+            //https://br.vuejs.org/v2/api/index.html
+
+            /*
+             *
+             * Invocado sincronicamente logo após a instância ser inicializada, antes da observação de dados e configuração de eventos e observadores.
+             *
+             */
+            beforeCreate() {
+                console.log('1-0 beforeCreate => ');
+                console.log('titulo => ', this.titulo);
+                console.log('el => ', this.$el);
+            },
+
+            // no create não temos acesso ao  DOM
+            created() {
+                console.log('1-1 created => ');
+                console.log('titulo=> ', this.titulo);
+                console.log('el => ', this.$el);
+            },
+
+            beforeMount() {
+                console.log('2-0 beforeMounted => ');
+                console.log('titulo=> ', this.titulo);
+                console.log('el => ', this.$el);
+            },
+
+            mounted() {
+                console.log('2-1 mounted => ');
+                console.log('titulo => ', this.titulo);
+                console.log('el => ', this.$el);
+                // this.$nextTick(function () {
+                //     // Código que irá rodar apenas após toda
+                //     // a árvore do componente ter sido renderizada
+                // });
+            },
+
+            beforeUpdate() {
+                 console.log('3-0 beforeUpdate => ');
+                // console.log('el => ', this.$el);
+            },
+
+
+            updated() {
+                 console.log('3-1 update => ');
+                 //console.log('el => ', this.$el);
+            },
+
+            beforeDestroy() {
+                console.log('4-0 beforeDestroy => ');
+                console.log('el => ', this.$el);
+            },
+
+            destroyed() {
+                console.log('4-0 destroyed => ');
+                console.log('el => ', this.$el);
+
+            },
+
+
+
+            data: {
+
+                titulo: 'Meu titulo vuejs',
+
+                message:        'Digite qualquer coisa.',
+
+                checkedNames:   [],
+
+                picked:         [],
+
+                selectMultiple: 'A',
+
+                selected:       'A',
+
+                options:        [
+                    { text: 'One', value: 'A' },
+                    { text: 'Two', value: 'B' },
+                    { text: 'Three', value: 'C' }
+                ],
+
+                pessoa:         {
+                    nome:   'Wagner Gomes',
+                    idade:  '32',
+                    prof:   'Programador'
+                },
+
+                errors:         [],
+                name:           null,
+                age:            null,
+                movie:          null
+            },
+
+
+            filters: {
+                lowerCase(str) {
+                    return str.toLowerCase();
+                },
+
+                truncate(str, length) {
+                    return str.substring(0, length);
+                }
+
+            },
+
+            /*
+             *  (computed) dados computados são cacheados de acordo com suas dependências
+             *
+             */
+            computed: {
+                toUpperCase() {
+                    return this.message.toUpperCase();
+                }
+            },
+
+            /*
+             * (watch) Observar quando uma varável se altera
+             * 
+             */
+            watch: {
+                pessoa(newValue, oldValue) {
+                    console.log('newValue => ', newValue);
+                    console.log('oldValue => ', oldValue);
+                }
+            },
+
+            methods: {
+                enviar() {
+                    //alert('enviando !');
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.open("GET", "http://localhost/git/vue-js/curso-vuejs-ninja/assets/ajax/operadorasBackend.php", true);
+                    xhttp.send();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            //document.getElementById("resp").innerHTML = JSON.parse(this.responseText);
+                            var contatos = JSON.parse(this.responseText)
+                            var ul = document.getElementById("ul-resp");
+                            var i=0;
+               
+                            for(i; i<contatos.length; i++ ) {
+                                var li  = document.createElement('li');
+                                var txt = document.createTextNode(contatos[i].nome + ', '+ contatos[i].categoria); 
+
+                                li.appendChild(txt);
+                                ul.appendChild(li);
+                                console.log(contatos[i].nome);
+                            }
+                        }
+                        //console.log(this.responseText);
+                        //console.log(typeof(JSON.parse(this.responseText)));
+                    };
+                },
+
+                // https://br.vuejs.org/v2/cookbook/form-validation.html
+                checkForm: function (e) {
+                    if (this.checkedNames != '' && this.options != '') {
+                        return true;
+                    }
+
+                    this.errors = [];
+
+                    if (!this.checkedNames) {
+                        this.errors.push('O checkedNames é obrigatório.');
+                    }
+                    if (!this.options) {
+                        this.errors.push('A options é obrigatória.');
+                    }
+
+                   
+                    console.log(this.errors);
+                    e.preventDefault();
+                }
+            },
+
+            
+
+
+        });
+       
+
+    </script>
+</html>
