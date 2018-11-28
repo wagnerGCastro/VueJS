@@ -1,0 +1,18 @@
+// https://cursos.alura.com.br/course/vue-parte1/task/23178
+
+$ npm install vue-cli@2.7.0 -g
+$ vue --version alurapic
+$ vue  init webpack-simple alurapic
+$ vue init webpack-simple calopsita
+
+ 	vue-cli · Generated "alurapic".
+$ 
+    1-  cd alurapic
+    2 - npm install
+    3 - npm run dev
+
+
+-- babel é u m transpiler
+   babel pega EcmaScript 2015(es6) e transforma para ecmascript 5
+
+-- webpacker é um module bundler
