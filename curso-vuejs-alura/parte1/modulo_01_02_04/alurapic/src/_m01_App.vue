@@ -24,7 +24,8 @@
 
 <script>
     export default {
-      name: 'app',
+,
+
       data() {
         return {
           msg: 'Bem vindo ao Mundo novo'

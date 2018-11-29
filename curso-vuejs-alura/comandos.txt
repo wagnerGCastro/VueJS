@@ -16,3 +16,41 @@ $
    babel pega EcmaScript 2015(es6) e transforma para ecmascript 5
 
 -- webpacker é um module bundler
+
+
+
+=================================================================
+=  								parte - 1                       =
+=================================================================
+# MÓDULO 01
+	Neste capítulo aprendemos:
+		instalar e utilizar o Vue CLI
+		criar do zero um novo projeto
+		estrutura fundamental do projeto
+		arquivos de template .vue
+		estrutura de um template
+		relação entre index.html, main.js e App.vue
+		como renderização de um template é feita
+		data binding unidirecional através de interpolação
+		o mecanismo de live reloading
+
+# MÓDULO 02
+	Neste capítulo aprendemos:
+		data binding unidirecional em atributos através da diretiva v-bind
+		atalho para v-bind
+		a diretiva v-for
+
+# MÓDULO 03
+	Instalação: npm install vue-resource@1.0.3 --save
+
+	Neste capítulo aprendemos:
+		a subir uma API para ser consumida pela nossa aplicação
+		a entender a separação entre cliente e API
+		a baixar e registrar o módulo VueResource
+		o suporte à lifecycle hooks que todo componente possui
+		que recursos no global view object ficam disponíveis para todas as outras view
+		consumir uma API através de $http
+		o conceito de promise
+		enxergar ainda melhor o poder do data binding
+
+# MÓDULO 04

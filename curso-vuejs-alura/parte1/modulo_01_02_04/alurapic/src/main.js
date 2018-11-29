@@ -5,6 +5,14 @@ import Vue from 'vue'
 import App from './App.vue'
 
 
+// importando o módulo
+import VueResource from 'vue-resource';
+
+
+
+// Aqui será usado
+Vue.use(VueResource);
+
 //criando uma view instance
 new Vue({
   el: '#app',
