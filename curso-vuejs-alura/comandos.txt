@@ -43,6 +43,11 @@ $
 # MÓDULO 03
 	Instalação: npm install vue-resource@1.0.3 --save
 
+	inciar api: 		    npm start
+	API escutando na porta: 3000
+	ulr: 					http://localhost:3000/v1/fotos
+
+
 	Neste capítulo aprendemos:
 		a subir uma API para ser consumida pela nossa aplicação
 		a entender a separação entre cliente e API
@@ -54,3 +59,11 @@ $
 		enxergar ainda melhor o poder do data binding
 
 # MÓDULO 04
+	Neste capítulo aprendemos:
+		a estilizar um componente
+		boa prática na organização do projeto
+		a criar um componente reutilizável
+		como passar parâmetro para um componente (comunicação)
+		o conceito de slot e preservação de conteúdo
+		importação de um componente em outro
+		a definir e delimitar o escopo de estilos ao componente no qual foram declarados
