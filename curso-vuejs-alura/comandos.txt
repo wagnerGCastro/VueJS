@@ -26,9 +26,7 @@ $
 	Neste capítulo aprendemos:
 		instalar e utilizar o Vue CLI
 		criar do zero um novo projeto
-		estrutura fundamental do projeto
-		arquivos de template .vue
-		estrutura de um template
+		estrutur		estrutura de um template
 		relação entre index.html, main.js e App.vue
 		como renderização de um template é feita
 		data binding unidirecional através de interpolação
@@ -67,3 +65,28 @@ $
 		o conceito de slot e preservação de conteúdo
 		importação de um componente em outro
 		a definir e delimitar o escopo de estilos ao componente no qual foram declarados
+
+		-- para   <style lang='sass'> 
+		npm install sass-loader --save-dev
+
+		npm install --save-dev node-sass
+
+# MÓDULO 05
+	Neste capítulo aprendemos:
+		
+		: é modelo de databind de fontes da dados para view
+		@ é um atalho de evento da  view para a fontes de dados.
+
+		a diretiva v-on e como lidar com eventos do JavaScript
+		atalho para diretiva v-on
+		diferença de v-on para v-bind
+		a filtrar uma lista
+		compreender o uso de computed property
+		que podemos acessar qualquer propriedade de data através de this
+		a diretiva v-show
+		detalhe entre v-show e slots
+		como realizar transições com auxílio do componente transition
+		a criar mais um componente
+
+# MÓDULO 05
+	Neste capítulo aprendemos:

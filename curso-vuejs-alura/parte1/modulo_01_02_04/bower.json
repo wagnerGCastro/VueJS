@@ -1,0 +1,22 @@
+{
+  "name": "alurapic",
+  "description": "A Vue.js project",
+  "main": "./src/App.vue",
+  "authors": [
+    "wagner <wagner@futmanager.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wagnerGCastro/VueJS",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/components/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "3.3.7"
+  }
+}
