@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head >
+	    
+	    <meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <title></title>
+	    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+		
+	    <link rel="stylesheet" href="./../assets/framework/bootstrap-3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="./../text/css" href="assets/framework/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
+
+	    <link rel="stylesheet" href="./../assets/css/@font-face.css" />
+		<link rel="stylesheet" href="./../assets/css/@responsive.css" />
+		<!-- <link rel="stylesheet" href="./../assets/css/index.css" /> -->
+
+		<style>
+			/* apartir de 1024 px*/
+			@media only screen and (min-width: 1024px) {
+				.bnt-search {  padding: 4.5px 13px !important;}
+			}
+		
+		</style>
+	</head>
+	<body>
+
+	<div id="root">
+		<!-- <nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">WebSiteName</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Page 1</a></li>
+					<li><a href="#">Page 2</a></li>
+					<li><a href="#">Page 3</a></li>
+				</ul>
+			</div>
+		</nav> -->
+
+		<nav-bar> </nav-bar>
+	</div>
+
+	<!-- Template fora da div pai -->
+	<template id="w-nav-bar">
+	    <nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">WebSiteName</a>
+				</div>
+
+				<menu-bar> </menu-bar>
+
+				<form class="navbar-form navbar-left" action="/action_page.php">
+				  	<div class="input-group">
+					    <input type="text" class="form-control" placeholder="Search">
+					    <div class="input-group-btn">
+					      	<button class="btn btn-default bnt-search" type="submit">
+					        	<i class="glyphicon glyphicon-search"></i>
+					      	</button>
+					    </div>
+				  	</div>
+				</form>
+			</div>
+		</nav>
+	</template>
+
+	<template id="menu">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">Page 1</a></li>
+			<li><a href="#">Page 2</a></li>
+			<li><a href="#">Page 3</a></li>
+		</ul>
+	</template>
+
+
+
+	<script type="text/javascript" src="./../assets/plugin/vue.js"></script>
+	<script>
+
+		// componente global 
+		Vue.component('nav-bar', {
+			template: 		"#w-nav-bar"
+
+		});
+
+		// componente global 
+		Vue.component('menu-bar', {
+			template: 		"#menu"
+
+		});
+
+		
+		// Vue.component('lista-tarefas', {
+		// 	template: '<div><tarefa v-for="tarefa in tarefas"> {{tarefa.descricao}} </tarefa></div>',
+		// 	data() {
+		// 		return {
+		// 		  tarefas: [
+		// 		    { descricao: ' ao Banco no Brasil' },
+		// 		    { descricao: ' gravar as aulas' },
+		// 		    { descricao: ' para a aula de inglês' }
+		// 		  ]
+		// 		}
+		// 	}
+		// });
+
+
+		Vue.component('tarefa', {
+			template: '<li> Ir   <b><slot></slot></b> </li>',
+		});
+
+		var app = new Vue({
+			el: '#root'
+		});
+
+
+	</script>
+
+
+	</body>
+</html>

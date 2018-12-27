@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "curso-vuejs-two",
   "description": "curso de vuejs",
@@ -15,3 +16,23 @@
     "tests"
   ]
 }
+=======
+{
+  "name": "curso-vuejs-two",
+  "description": "curso de vuejs",
+  "main": "index.js",
+  "authors": [
+    "wagner gomes"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components/",
+    "test",
+    "tests"
+  ]
+}
+>>>>>>> 7c3f60e15aa8eef32f8189aa406cc31b0e1962d0

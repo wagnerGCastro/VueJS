@@ -67,24 +67,79 @@
 	
 </script>
 
-<style type="text/css" scoped>
-    .botao {
-
-        display: inline-block;
-        padding: 5px;
-        border-radius: 3px;
-        margin: 10px;
-        font-size: 0.9em;
-    }
-
-    .botao-perigo {
-        background: firebrick;
-        color: white;
-    }
-
-    .botao-padrao {
-        background: darkcyan;
-        color: white;
-    }									
+<style type="text/css" scoped lang="scss">
+	//@import './Botao.scss';
+	/* 
+	$corPerigo: firebrick;
+	$corPadrao: darkcyan;
+	    .botao {
 	
+	        display: inline-block;
+	        padding: 5px;
+	        border-radius: 3px;
+	        margin: 10px;
+	        font-size: 0.9em;
+	    }
+	
+	    .botao-perigo {
+	        background: $cor;
+	        color: white;
+	    }
+	
+	    .botao-padrao {
+	        background: $corPadrao;
+	        color: white;
+	    }									
+	 */
+</style>
+
+
+<!-- <style type="text/css" scoped lang="scss">
+	@import './Botao.scss';
+	/* 
+	$corPerigo: firebrick;
+	$corPadrao: darkcyan;
+	    .botao {
+	
+	        display: inline-block;
+	        padding: 5px;
+	        border-radius: 3px;
+	        margin: 10px;
+	        font-size: 0.9em;
+	    }
+	
+	    .botao-perigo {
+	        background: $cor;
+	        color: white;
+	    }
+	
+	    .botao-padrao {
+	        background: $corPadrao;
+	        color: white;
+	    }									
+	 */
+</style> -->
+
+
+<style type="text/css" scoped >
+
+	    .botao {
+	
+	        display: inline-block;
+	        padding: 5px;
+	        border-radius: 3px;
+	        margin: 10px;
+	        font-size: 0.9em;
+	    }
+	
+	    .botao-perigo {
+	        background: firebrick;
+	        color: white;
+	    }
+	
+	    .botao-padrao {
+	        background: darkcyan;
+	        color: white;
+	    }									
+	 
 </style>
